@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v3
         name: Checkout
         with:
-          repository: andrewthetechie/gha-clone-release
+          repository: andrewthetechie/gha-clone-releases
           ref: main
           path: gha-clone-releases
           token: ${{ secrets.THIS_PAT }}
