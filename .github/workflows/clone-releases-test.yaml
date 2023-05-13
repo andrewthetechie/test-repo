@@ -1,0 +1,15 @@
+name: Clone Releases test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  clone:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Releases
+        uses: andrewthetechie/gha-clone-releases@main
+        with:
+          token: ${{ secrets.THIS_PAT }}
+          src_repo: andrewthetechie/dd-event-rs
+          copy_assets: true
