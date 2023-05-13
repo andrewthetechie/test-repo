@@ -7,8 +7,20 @@ jobs:
   clone:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        name: Checkout
+        with:
+          repository: andrewthetechie/gha-clone-release
+          path: gha-clone-releases
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Update action.yml to use dockerfile
+        uses: rmeneely/update-yaml@v1
+        with:
+          infile: gha-clone-releases/action.yml
+          varlist: "runs.image=Dockerfile"
       - name: Clone Releases
-        uses: andrewthetechie/gha-clone-releases@main
+        uses: ./gha-clone-releases
         with:
           token: ${{ secrets.THIS_PAT }}
           src_repo: andrewthetechie/dd-event-rs
