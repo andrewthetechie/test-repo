@@ -22,7 +22,7 @@ jobs:
 #           infile: gha-clone-releases/action.yml
 #           varlist: "runs.image=Dockerfile"
       - name: Clone Releases
-        uses: andrewthetechie/gha-clone-releases@v1.6.0
+        uses: andrewthetechie/gha-clone-releases@v1.6.1
         with:
           token: ${{ secrets.THIS_PAT }}
           src_repo: andrewthetechie/dd-event-rs
