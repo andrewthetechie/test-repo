@@ -25,5 +25,5 @@ jobs:
         uses: ./gha-clone-releases
         with:
           token: ${{ secrets.THIS_PAT }}
-          src_repo: andrewthetechie/dd-event-rs
+          src_repo: andrewthetechie/test-private-repo
           copy_assets: true
